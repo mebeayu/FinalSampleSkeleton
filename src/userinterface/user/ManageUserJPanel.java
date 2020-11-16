@@ -266,7 +266,7 @@ public class ManageUserJPanel extends javax.swing.JPanel {
         String psw = this.txtPsw.getText();
         String realname = this.txtRealName.getText();
         Role r = (Role)this.comboRole.getSelectedItem();
-        String OrgID = MainJFrame.user.OrgID;
+        String OrgID = "";
         if(username.isEmpty()||psw.isEmpty()||realname.isEmpty()){
             this.labInfo.setText("User Info Empty");
             return;
