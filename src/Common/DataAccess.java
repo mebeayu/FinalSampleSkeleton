@@ -34,8 +34,8 @@ public class DataAccess {
         ////1Vip customer 2Customer has private trainer 3Private trainer 4Vip trainer 5Reception 6Engineer 7cooker 8dietician 9doctor 10system admin
         //11CustomAdmin 12GemAdmin 13RestaurantAdmin  14PhysicalAdmin 
         listSysMenu = new ArrayList();
-        listSysMenu.add(new SysMenu(19,"organization",new String[]{"10"}));//组织管理
-        listSysMenu.add(new SysMenu(2,"ManageUser",new String[]{"10","11","12","13","14","5"}));//用户管理
+        listSysMenu.add(new SysMenu(19,"Organization&User",new String[]{"10","11","12","13","14","5"}));//组织管理
+        //listSysMenu.add(new SysMenu(2,"ManageUser",new String[]{"10","11","12","13","14","5"}));//用户管理
         listSysMenu.add(new SysMenu(3,"My Info",new String[]{"1","2"}));//查看用户信息
         listSysMenu.add(new SysMenu(4,"Course",new String[]{"1","2"}));//查看和选择VIP课程
         listSysMenu.add(new SysMenu(5,"Private Course",new String[]{"2"}));//查看和选择私教课程

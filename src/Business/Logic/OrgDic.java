@@ -20,7 +20,7 @@ public class OrgDic {
         DB db = DB.getDB();
         Org o = new Org();
         o.ID = ID;
-        ObjectSet<Org> query = db.Query(o);
+        ObjectSet<Org> query = db._Query(o);
         if(query.size()>0){
             
             return false;
@@ -35,7 +35,7 @@ public class OrgDic {
         DB db = DB.getDB();
         Org o = new Org();
         o.ID = ID;
-        ObjectSet<Org> query = db.Query(o);
+        ObjectSet<Org> query = db._Query(o);
         if(query.hasNext()){
             o = query.next();
             boolean res = db.Delete(o);
@@ -45,25 +45,21 @@ public class OrgDic {
         return false;
     }
     public static List<Org> QueryOrg(String ParentID){
-         List<Org> list = new ArrayList();
+        
          DB db = DB.getDB();
          Org o = new Org();
          o.ParentID = ParentID;
-         ObjectSet<Org> query = db.Query(o);
-         while(query.hasNext()){
-             Org org = query.next();
-             list.add(org);
-         }
-         
+         List<Org> list =  db.Query(o);
+        
          return list;
     }
     public static Org GetOrg(String ID){
         DB db = DB.getDB();
         Org o = new Org();
         o.ID = ID;
-        ObjectSet<Org> query = db.Query(o);
-        if(query.hasNext()){
-            o = query.next();
+        List<Org> list = db.Query(o);
+        if(list!=null&&list.size()>0){
+            o = list.get(0);
             return o;
         }
         return null;
@@ -73,14 +69,14 @@ public class OrgDic {
         DB db = DB.getDB();
         Org o = new Org();
         o.ID = ID;
-        ObjectSet<Org> query = db.Query(o);
+        ObjectSet<Org> query = db._Query(o);
         if(query.hasNext()){
              Org org = query.next();
              path = org.Name;
              while(true){
                  o.ID=org.ParentID;
                  if(o.ID.equals("0")) break;
-                 query = db.Query(o);
+                 query = db._Query(o);
                  if(query.hasNext()){
                      org = query.next();
                      path = path+"/"+org.Name;

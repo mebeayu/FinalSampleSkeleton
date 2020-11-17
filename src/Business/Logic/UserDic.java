@@ -22,7 +22,7 @@ public class UserDic {
         DB db = DB.getDB();
         User u = new User();
         u.username = username;
-        ObjectSet<User> query= db.Query(u);
+        ObjectSet<User> query= db._Query(u);
         if(query.hasNext()){
             
             return MessageCode.ERROR_USERNAME_EXSIST;
@@ -42,7 +42,7 @@ public class UserDic {
          DB db = DB.getDB();
         User u = new User();
         u.username = username;
-        ObjectSet<User> query= db.Query(u);
+        ObjectSet<User> query= db._Query(u);
         if(query.hasNext()){
             User user = query.next();
             db.Delete(user);
@@ -56,7 +56,7 @@ public class UserDic {
         DB db = DB.getDB();
         User u = new User();
         u.username = username;
-        ObjectSet<User> query= db.Query(u);
+        ObjectSet<User> query= db._Query(u);
         System.out.println(query.size());
         if(query.hasNext()==false){
             
@@ -76,7 +76,7 @@ public class UserDic {
         DB db = DB.getDB();
         User u = new User();
         u.username = username;
-        ObjectSet<User> query= db.Query(u);
+        ObjectSet<User> query= db._Query(u);
         if(query.hasNext()==false){
             
             return MessageCode.ERROR_USERNAME_NOTEXSIST;
@@ -97,7 +97,7 @@ public class UserDic {
         for (int i = 0; i < arrType.length; i++) {
             User u = new User();
             u.type = arrType[i];
-            ObjectSet<User> query = db.Query(u);
+            ObjectSet<User> query = db._Query(u);
             while(query.hasNext()){
                 list.add(query.next());
             }
@@ -105,4 +105,20 @@ public class UserDic {
        
         return list;
     }
+    public static List<User> QueryUseyByTypes(String[] arrType,String username){
+        List<User> list = new ArrayList();
+        DB db = DB.getDB();
+        for (int i = 0; i < arrType.length; i++) {
+            User u = new User();
+            u.username = username;
+            u.type = arrType[i];
+            ObjectSet<User> query = db._Query(u);
+            while(query.hasNext()){
+                list.add(query.next());
+            }
+        }
+
+        return list;
+    }
+
 }

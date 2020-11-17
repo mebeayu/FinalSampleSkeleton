@@ -24,6 +24,8 @@ import javax.swing.event.TreeSelectionListener;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreeModel;
+import userinterface.reception.CourseJPanel;
+import userinterface.reception.VipCustomerInfoJPanel;
 import userinterface.user.ChangePSwJPanel;
 import userinterface.user.ManageUserJPanel;
 import userinterface.user.OrganizationJPanel;
@@ -262,6 +264,16 @@ public class MainJFrame extends javax.swing.JFrame {
                         container.add(new OrganizationJPanel());
                         layout.next(container);
                     }
+                    else if(menu.ID==9){
+                        container.setLayout(layout);
+                        container.add(new CourseJPanel());
+                        layout.next(container);
+                    }
+                    else if(menu.ID==7){
+                        container.setLayout(layout);
+                        container.add(new VipCustomerInfoJPanel());
+                        layout.next(container);
+                    }                    
                 }
  
             }

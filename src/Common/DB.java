@@ -9,6 +9,8 @@ import com.db4o.Db4oEmbedded;
 import com.db4o.ObjectContainer;
 import com.db4o.ObjectSet;
 import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 
@@ -31,10 +33,22 @@ public class DB {
     public void Close(int t){
         db.close();
     }
-    public <T extends Object> ObjectSet<T> Query(Object o){
-        try{
+    public <T extends Object>  ObjectSet<T> _Query(Object o){
+         try{
             ObjectSet<T> query = db.queryByExample(o);
             return query;
+        }catch(Exception ex){
+            return null;
+        }
+    }
+    public <T extends Object> List<T> Query(Object o){
+        try{
+            List<T> list = new ArrayList();
+            ObjectSet<T> query = db.queryByExample(o);
+            while(query.hasNext()){
+                list.add(query.next());
+            }
+            return list;
         }catch(Exception ex){
             return null;
         }

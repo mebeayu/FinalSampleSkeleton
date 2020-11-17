@@ -12,7 +12,11 @@ package Business.Models;
 public class Course {
     public String CourseID;
     public String CourseName;
-    public String Time;
+    public String Address;
+    public String CourseDate;
+    public String CourseTime;
     public String TrainerName;
-    public String TrainerID;
+    public String TrainerUserName;
+    public String OrgID;
+    public int ClassHour;
 }
