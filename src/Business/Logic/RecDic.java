@@ -81,6 +81,21 @@ public class RecDic {
             
         }
     }
+    public static boolean SetVipCoustomerTrainer(VipCustomer coustomer){
+         DB db = DB.getDB();
+        VipCustomer c = new VipCustomer();
+        c.username = coustomer.username;
+        List<VipCustomer> list = db.Query(c);
+        if(list.size()==0){
+            return false;
+        }
+        else{
+            c = list.get(0);
+            c.PrivateTrainerName = coustomer.PrivateTrainerName;    
+            c.PrivateTrainerUserName = coustomer.PrivateTrainerUserName;
+            return db.Store(c);
+        }  
+    }
     public static VipCustomer GetVipCustomer(String username){
          DB db = DB.getDB();
         VipCustomer c = new VipCustomer();

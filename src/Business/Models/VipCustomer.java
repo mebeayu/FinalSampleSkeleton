@@ -15,4 +15,6 @@ public class VipCustomer extends User{
     public String Height;
     public String Weight;
     public String Mobile;
+    public String PrivateTrainerUserName; 
+    public String PrivateTrainerName; 
 }

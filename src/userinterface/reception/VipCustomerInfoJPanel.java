@@ -23,7 +23,7 @@ public class VipCustomerInfoJPanel extends javax.swing.JPanel {
 
     User user;
     String username;
-    List<VipCustomer> listCustomer = new ArrayList();
+    
     /**
      * Creates new form VipCustomerInfo
      */
@@ -32,7 +32,7 @@ public class VipCustomerInfoJPanel extends javax.swing.JPanel {
         LoadData();
     }
     public void LoadData(){
-        listCustomer.clear();
+        
         String username = this.txtKey.getText();
         if(username.isEmpty()) username = null;
         List<User> list = UserDic.QueryUseyByTypes(new String[]{"1","2"}, username);
@@ -154,9 +154,7 @@ public class VipCustomerInfoJPanel extends javax.swing.JPanel {
                                     .addComponent(jLabel3)
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(jLabel1)
-                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(jLabel2)))
+                                        .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING))
                                     .addComponent(jLabel7))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -189,9 +187,9 @@ public class VipCustomerInfoJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 369, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel1)
-                            .addComponent(txtCoustomerName, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtCoustomerName, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel1))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel2)
