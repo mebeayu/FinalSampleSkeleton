@@ -11,6 +11,7 @@ package Common;
  */
 public class MessageCode {
     public static int SUCCESS = 0;
+    public static int FAILED=-1; 
     public static int ERROR_USERNAME_EXSIST=1; 
     public static int ERROR_PASSWORD=2; 
     public static int ERROR_USERNAME_NOTEXSIST=3; 

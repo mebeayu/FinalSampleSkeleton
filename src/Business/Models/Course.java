@@ -18,5 +18,6 @@ public class Course {
     public String TrainerName;
     public String TrainerUserName;
     public String OrgID;
+    public String IsPrivate;
     public int ClassHour;
 }

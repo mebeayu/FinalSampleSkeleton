@@ -72,6 +72,20 @@ public class UserDic {
        
         return u;
     }
+    public static int SetUserInfo(String username,String realname){
+         DB db = DB.getDB();
+        User u = new User();
+        u.username = username;
+        ObjectSet<User> query= db._Query(u);
+        if(query.hasNext()==false){
+            
+            return MessageCode.ERROR_USERNAME_NOTEXSIST;
+        }
+        u= query.next();
+        u.realname = realname;
+        if(db.Store(u)) return MessageCode.SUCCESS;;
+        return MessageCode.FAILED;
+    }
     public static int ChangePsw(String username,String oldpsw,String newpsw){
         DB db = DB.getDB();
         User u = new User();

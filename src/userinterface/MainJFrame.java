@@ -8,6 +8,7 @@ package userinterface;
 import Business.DB4OUtil.DB4OUtil;
 import Business.Logic.OrgDic;
 import Business.Logic.UserDic;
+import Business.Models.Org;
 import Business.Models.SysMenu;
 import Business.Models.User;
 import Common.DB;
@@ -24,6 +25,7 @@ import javax.swing.event.TreeSelectionListener;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreeModel;
+import userinterface.coustomer.CustomerInfoJPanel;
 import userinterface.reception.CourseJPanel;
 import userinterface.reception.Vip2CustomerInfoJPanel;
 import userinterface.reception.VipCustomerInfoJPanel;
@@ -48,6 +50,7 @@ public class MainJFrame extends javax.swing.JFrame {
         initComponents();
         //DataAccess.UIID();
         layout = new CardLayout();
+        
         //OrgDic.AddOrg("1", "NetWork", "0");
        // dB4OUtil = DB4OUtil.getInstance();
         //da = dB4OUtil.RetrieveData();
@@ -279,7 +282,12 @@ public class MainJFrame extends javax.swing.JFrame {
                         container.setLayout(layout);
                         container.add(new Vip2CustomerInfoJPanel());
                         layout.next(container);
-                    }                      
+                    } 
+                    else if(menu.ID==3){
+                        container.setLayout(layout);
+                        container.add(new CustomerInfoJPanel());
+                        layout.next(container);
+                    } 
                 }
  
             }

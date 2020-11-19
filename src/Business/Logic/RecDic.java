@@ -37,6 +37,7 @@ public class RecDic {
                 c.TrainerName = course.TrainerName;
                 c.CourseTime = course.CourseTime;
                 c.OrgID = course.OrgID;
+                c.IsPrivate = course.IsPrivate;
                 boolean res = db.Store(c);
                 return res;
             }
@@ -54,9 +55,17 @@ public class RecDic {
             }
         return false;
     }
-    public static List<Course> QueryCourse(String OrgID){
+    public static List<Course> QueryCourse(String OrgID,String IsPrivate){
         Course c = new Course();
         c.OrgID = OrgID;
+        c.IsPrivate=IsPrivate;
+        DB db = DB.getDB();
+        return db.Query(c);
+    }
+    public static List<Course> QueryPrivateCourse(String TrainerUserName){
+        Course c = new Course();
+        c.TrainerUserName = TrainerUserName;
+        c.IsPrivate="1";
         DB db = DB.getDB();
         return db.Query(c);
     }

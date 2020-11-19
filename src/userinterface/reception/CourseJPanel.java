@@ -32,7 +32,7 @@ public class CourseJPanel extends javax.swing.JPanel {
     }
     public void LoadCourseData(){
         
-        listCourse = RecDic.QueryCourse(MainJFrame.user.OrgID);
+        listCourse = RecDic.QueryCourse(MainJFrame.user.OrgID,"0");
         DefaultTableModel tableModel = (DefaultTableModel)this.tableCourse.getModel();
         String[] cols = new String[]{"Course Name","Date","Time","Trainer","Class Hour","Address"};
         String[][] rows= new String[listCourse.size()][6];
@@ -141,7 +141,7 @@ public class CourseJPanel extends javax.swing.JPanel {
                                 .addComponent(jLabel7)
                                 .addComponent(jLabel4)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(txtCourseName)
@@ -162,8 +162,8 @@ public class CourseJPanel extends javax.swing.JPanel {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(txtAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 377, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(btnSave, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btnSave, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
                                 .addComponent(btnReset)))
                         .addGap(0, 19, Short.MAX_VALUE))
                     .addComponent(jScrollPane1))
@@ -211,6 +211,7 @@ public class CourseJPanel extends javax.swing.JPanel {
         c.TrainerName = trainer.realname;
         c.TrainerUserName = trainer.username;
         c.OrgID = MainJFrame.user.OrgID;
+        c.IsPrivate = "0";
         boolean res = RecDic.SaveCourse(c);
         if(res) {
             this.LoadCourseData();
