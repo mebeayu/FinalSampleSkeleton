@@ -62,6 +62,12 @@ public class RecDic {
         DB db = DB.getDB();
         return db.Query(c);
     }
+    public static List<Course> QueryCourse(String IsPrivate){
+        Course c = new Course();
+        c.IsPrivate=IsPrivate;
+        DB db = DB.getDB();
+        return db.Query(c);
+    }
     public static List<Course> QueryPrivateCourse(String TrainerUserName){
         Course c = new Course();
         c.TrainerUserName = TrainerUserName;

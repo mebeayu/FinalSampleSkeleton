@@ -9,8 +9,18 @@ package Business.Models;
  *
  * @author 27246
  */
-public class CourseRecord extends Course{
+public class CourseRecord {
     public String ID;
     public String username;
     public String CheckTime;
+    public String CourseID;
+    public String CourseName;
+    public String Address;
+    public String CourseDate;
+    public String CourseTime;
+    public String TrainerName;
+    public String TrainerUserName;
+    public String OrgID;
+    public String IsPrivate;
+    public int ClassHour;
 }

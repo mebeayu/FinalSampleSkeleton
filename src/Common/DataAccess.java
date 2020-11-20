@@ -36,9 +36,8 @@ public class DataAccess {
         listSysMenu = new ArrayList();
         listSysMenu.add(new SysMenu(19,"Organization&User",new String[]{"10","11","12","13","14","5"}));//组织管理
         //listSysMenu.add(new SysMenu(2,"ManageUser",new String[]{"10","11","12","13","14","5"}));//用户管理
-        listSysMenu.add(new SysMenu(3,"My Info",new String[]{"1","2"}));//查看用户信息
-        listSysMenu.add(new SysMenu(4,"Course",new String[]{"1","2"}));//查看和选择VIP课程
-        listSysMenu.add(new SysMenu(5,"Private Course",new String[]{"2"}));//查看和选择私教课程
+        listSysMenu.add(new SysMenu(3,"My Info",new String[]{"1","2"}));//查看用户信息        
+        listSysMenu.add(new SysMenu(5,"Course Sign in",new String[]{"1","2"}));//课程打卡
         listSysMenu.add(new SysMenu(6,"Order",new String[]{"1","2"}));// 查看营养师菜单和下订单
         
         listSysMenu.add(new SysMenu(18,"Stc Course",new String[]{"5"}));//按教练统计课程数
