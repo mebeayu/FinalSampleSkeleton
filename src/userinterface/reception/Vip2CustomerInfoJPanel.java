@@ -11,6 +11,7 @@ import Business.Models.User;
 import Business.Models.VipCustomer;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
+import userinterface.MainJFrame;
 
 /**
  *
@@ -157,8 +158,13 @@ public class Vip2CustomerInfoJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_tableUserMouseClicked
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
+        int n = this.tableUser.getSelectedRow();
+        if(n<0) return;
+        
         VipCustomer c = new VipCustomer();
-        c.username = this.username;
+        c.username = this.tableUser.getValueAt(n, 0).toString();
+        c.realname = this.tableUser.getValueAt(n, 1).toString();
+        //c.realname = MainJFrame.user.realname;
         User user = (User)this.comboTrainer.getSelectedItem();
         c.PrivateTrainerName = user.realname;
         c.PrivateTrainerUserName = user.username;

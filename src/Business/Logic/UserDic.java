@@ -52,6 +52,13 @@ public class UserDic {
         
         return MessageCode.ERROR_USERNAME_NOTEXSIST;
     }
+    public static User GetUser(String username){
+        User u = new User();
+        u.username = username;
+        List<User> list = DB.getDB().Query(u);
+        if(list.size()>0) return list.get(0);
+        return null;
+    }
     public static User Login(String username,String psw){
         DB db = DB.getDB();
         User u = new User();

@@ -60,6 +60,7 @@ public class DataAccess {
         listSysMenu.add(new SysMenu(17,"Input Health Report",new String[]{"9"}));//录入和查看客户健康报告
         
         listSysMenu.add(new SysMenu(0,"ChangePassword",null));
+        listSysMenu.add(new SysMenu(-2,"Logout",null));
         listSysMenu.add(new SysMenu(-1,"Quit",null));
         
     }

@@ -30,6 +30,8 @@ import userinterface.coustomer.CustomerInfoJPanel;
 import userinterface.reception.CourseJPanel;
 import userinterface.reception.Vip2CustomerInfoJPanel;
 import userinterface.reception.VipCustomerInfoJPanel;
+import userinterface.trainer.SetMyCourseJPanel;
+import userinterface.trainer.ViewMyCustomerJPanel;
 import userinterface.user.ChangePSwJPanel;
 import userinterface.user.ManageUserJPanel;
 import userinterface.user.OrganizationJPanel;
@@ -293,7 +295,22 @@ public class MainJFrame extends javax.swing.JFrame {
                         container.setLayout(layout);
                         container.add(new CourseRecordJPanel());
                         layout.next(container);
-                    }                     
+                    } 
+                    else if(menu.ID==10){
+                        container.setLayout(layout);
+                        container.add(new ViewMyCustomerJPanel());
+                        layout.next(container);
+                    }   
+                    else if(menu.ID==11){
+                        container.setLayout(layout);
+                        container.add(new SetMyCourseJPanel());
+                        layout.next(container);
+                    }   
+                    else if(menu.ID==-2){
+                        user = null;
+                        setVisible(false);
+                        jDialogLogin.setVisible(true);
+                    }                       
                 }
  
             }

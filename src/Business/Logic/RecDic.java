@@ -92,6 +92,7 @@ public class RecDic {
             c.Sex = coustomer.Sex;
             c.Weight = coustomer.Weight;
             c.Mobile = coustomer.Mobile;
+            c.realname = coustomer.realname;
              return db.Store(c);
             
         }
@@ -106,6 +107,7 @@ public class RecDic {
         }
         else{
             c = list.get(0);
+            c.realname = coustomer.realname;
             c.PrivateTrainerName = coustomer.PrivateTrainerName;    
             c.PrivateTrainerUserName = coustomer.PrivateTrainerUserName;
             return db.Store(c);
