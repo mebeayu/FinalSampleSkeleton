@@ -12,6 +12,7 @@ package Business.Models;
 public class CourseRecord {
     public String ID;
     public String username;
+    public String realname;    
     public String CheckTime;
     public String CourseID;
     public String CourseName;

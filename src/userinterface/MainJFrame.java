@@ -28,6 +28,7 @@ import javax.swing.tree.TreeModel;
 import userinterface.coustomer.CourseRecordJPanel;
 import userinterface.coustomer.CustomerInfoJPanel;
 import userinterface.reception.CourseJPanel;
+import userinterface.reception.SignInStcJPanel;
 import userinterface.reception.Vip2CustomerInfoJPanel;
 import userinterface.reception.VipCustomerInfoJPanel;
 import userinterface.trainer.SetMyCourseJPanel;
@@ -310,7 +311,12 @@ public class MainJFrame extends javax.swing.JFrame {
                         user = null;
                         setVisible(false);
                         jDialogLogin.setVisible(true);
-                    }                       
+                    } 
+                    else if(menu.ID==18){
+                        container.setLayout(layout);
+                        container.add(new SignInStcJPanel());
+                        layout.next(container);
+                    }                     
                 }
  
             }

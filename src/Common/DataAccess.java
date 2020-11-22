@@ -40,7 +40,7 @@ public class DataAccess {
         listSysMenu.add(new SysMenu(5,"Course Sign in",new String[]{"1","2"}));//课程打卡
         listSysMenu.add(new SysMenu(6,"Order",new String[]{"1","2"}));// 查看营养师菜单和下订单
         
-        listSysMenu.add(new SysMenu(18,"Stc Course",new String[]{"5"}));//按教练统计课程数
+        listSysMenu.add(new SysMenu(18,"Stc Course",new String[]{"5"}));//统计打卡课程数
         listSysMenu.add(new SysMenu(7,"Set Vip Info",new String[]{"5"}));//设置VIP客户信息
         listSysMenu.add(new SysMenu(8,"Set Vip2 Info",new String[]{"5"}));//设置VIP2客户信息及私人教练
         listSysMenu.add(new SysMenu(9,"Set Vip Course",new String[]{"5"}));//设置课程信息

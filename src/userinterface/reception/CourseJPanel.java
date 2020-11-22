@@ -211,6 +211,7 @@ public class CourseJPanel extends javax.swing.JPanel {
         c.TrainerName = trainer.realname;
         c.TrainerUserName = trainer.username;
         c.OrgID = MainJFrame.user.OrgID;
+        
         c.IsPrivate = "0";
         boolean res = RecDic.SaveCourse(c);
         if(res) {

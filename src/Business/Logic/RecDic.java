@@ -6,9 +6,14 @@
 package Business.Logic;
 
 import Business.Models.Course;
+import Business.Models.CourseRecord;
+import Business.Models.SignInStc;
 import Business.Models.VipCustomer;
 import Common.DB;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  *
@@ -122,5 +127,51 @@ public class RecDic {
             return list.get(0);
         }
         return null;
+    }
+    public static List<SignInStc> StcTrainerCourse(){
+        Map<String,SignInStc> map = new HashMap();
+        CourseRecord c = new CourseRecord();
+        List<CourseRecord> list = DB.getDB().Query(c);
+        for (int i = 0; i < list.size(); i++) {
+            c = list.get(i);
+            if(map.containsKey(c.TrainerUserName)){
+                map.get(c.TrainerUserName).Count += 1;
+            }
+            else{
+                SignInStc s = new SignInStc();
+                s.Count = 1;
+                s.username = c.TrainerUserName;
+                s.realname = c.TrainerName;
+                map.put(s.username, s);
+            }
+        }
+        List<SignInStc> listRes = new ArrayList();
+        for (SignInStc value : map.values()) {
+            listRes.add(value);
+        }
+        return listRes;
+    }
+    public static List<SignInStc> StcCustomerCourse(){
+        Map<String,SignInStc> map = new HashMap();
+        CourseRecord c = new CourseRecord();
+        List<CourseRecord> list = DB.getDB().Query(c);
+        for (int i = 0; i < list.size(); i++) {
+            c = list.get(i);
+            if(map.containsKey(c.username)){
+                map.get(c.username).Count += 1;
+            }
+            else{
+                SignInStc s = new SignInStc();
+                s.Count = 1;
+                s.username = c.username;
+                s.realname = c.realname;
+                map.put(s.username, s);
+            }
+        }
+        List<SignInStc> listRes = new ArrayList();
+        for (SignInStc value : map.values()) {
+            listRes.add(value);
+        }
+        return listRes;
     }
 }

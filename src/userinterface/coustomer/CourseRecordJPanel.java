@@ -181,6 +181,7 @@ public class CourseRecordJPanel extends javax.swing.JPanel {
         cr.TrainerName = c.TrainerName;
         cr.TrainerUserName = c.TrainerUserName;
         cr.username = MainJFrame.user.username;
+        cr.realname = MainJFrame.user.realname;
         boolean res = CusDic.AddCourseRecord(cr);
         if(res==false){
             this.labInfo.setText("has record");
