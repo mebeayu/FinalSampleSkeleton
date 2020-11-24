@@ -5,9 +5,11 @@
  */
 package Business.Logic;
 
+import Business.Models.Course;
 import Business.Models.VipCustomer;
 import Common.DB;
 import java.util.List;
+import userinterface.MainJFrame;
 
 /**
  *
@@ -18,6 +20,12 @@ public class TraDic {
         VipCustomer v = new VipCustomer();
         v.PrivateTrainerUserName = username;
         List<VipCustomer> list = DB.getDB().Query(v);
+        return list;
+    }
+    public static List<Course> GetMyCourse(){
+        Course c = new Course();
+        c.TrainerUserName = MainJFrame.user.username;
+        List<Course> list = DB.getDB().Query(c);
         return list;
     }
 }

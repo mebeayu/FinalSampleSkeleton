@@ -33,6 +33,7 @@ import userinterface.reception.Vip2CustomerInfoJPanel;
 import userinterface.reception.VipCustomerInfoJPanel;
 import userinterface.trainer.SetMyCourseJPanel;
 import userinterface.trainer.ViewMyCustomerJPanel;
+import userinterface.trainer.ViewVipCourseJPanel;
 import userinterface.user.ChangePSwJPanel;
 import userinterface.user.ManageUserJPanel;
 import userinterface.user.OrganizationJPanel;
@@ -315,6 +316,11 @@ public class MainJFrame extends javax.swing.JFrame {
                     else if(menu.ID==18){
                         container.setLayout(layout);
                         container.add(new SignInStcJPanel());
+                        layout.next(container);
+                    } 
+                    else if(menu.ID==13){
+                        container.setLayout(layout);
+                        container.add(new ViewVipCourseJPanel());
                         layout.next(container);
                     }                     
                 }

@@ -35,7 +35,7 @@ public class DataAccess {
         //11CustomAdmin 12GemAdmin 13RestaurantAdmin  14PhysicalAdmin 
         listSysMenu = new ArrayList();
         listSysMenu.add(new SysMenu(19,"Organization&User",new String[]{"10","11","12","13","14","5"}));//组织管理
-        //listSysMenu.add(new SysMenu(2,"ManageUser",new String[]{"10","11","12","13","14","5"}));//用户管理
+       
         listSysMenu.add(new SysMenu(3,"My Info",new String[]{"1","2"}));//查看用户信息        
         listSysMenu.add(new SysMenu(5,"Course Sign in",new String[]{"1","2"}));//课程打卡
         listSysMenu.add(new SysMenu(6,"Order",new String[]{"1","2"}));// 查看营养师菜单和下订单
@@ -47,7 +47,7 @@ public class DataAccess {
         
         listSysMenu.add(new SysMenu(10,"View Custom",new String[]{"3"}));//查看我的客户
         listSysMenu.add(new SysMenu(11,"Set My Course",new String[]{"3"}));//设置我的私教课程
-        listSysMenu.add(new SysMenu(12,"View Private Course",new String[]{"3"}));//查看客户选择的我的课程安排
+        listSysMenu.add(new SysMenu(12,"View Course Record",new String[]{"3","4"}));//查看客户打卡的我的课程
         
         listSysMenu.add(new SysMenu(13,"View Vip Course",new String[]{"4"}));//查看和我相关的VIP课程安排
         
