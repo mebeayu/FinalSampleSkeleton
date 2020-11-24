@@ -6,6 +6,7 @@
 package Business.Logic;
 
 import Business.Models.Course;
+import Business.Models.CourseRecord;
 import Business.Models.VipCustomer;
 import Common.DB;
 import java.util.List;
@@ -26,6 +27,12 @@ public class TraDic {
         Course c = new Course();
         c.TrainerUserName = MainJFrame.user.username;
         List<Course> list = DB.getDB().Query(c);
+        return list;
+    }
+    public static List<CourseRecord> GetCourseRecord(){
+        CourseRecord c = new CourseRecord();
+        c.TrainerUserName =  MainJFrame.user.username;
+        List<CourseRecord> list = DB.getDB().Query(c);
         return list;
     }
 }
